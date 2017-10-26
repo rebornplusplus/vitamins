@@ -1,3 +1,0 @@
-<pre>
-vitamins
-</pre>
