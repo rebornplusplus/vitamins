@@ -29,7 +29,7 @@ int mst(int n) {
 			if(rep[u] > rep[v]) par[v] = u, ++rep[u];
 			else par[u] = v, ++rep[v];
 			res += e[i].w;
-			if(++cnt == n) return res;
+			if(++cnt == n-1) return res;
 		}
 	}
 
