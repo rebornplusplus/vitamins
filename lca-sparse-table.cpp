@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-const int N = 30000 + 5;
+const int N = 100000 + 5;
 vector<int> g[N];
 int par[N], lev[N];
 int sp[N][20];		// sparse table. i's 2^j th parent in sp[i][j]
@@ -28,7 +28,7 @@ void lca_init() {
 	}
 }
 
-inline int lca(int u, int v) {
+int lca(int u, int v) {
 	if(lev[u] < lev[v]) swap(u, v);
 
 	int logn = 0;
