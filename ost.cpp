@@ -4,7 +4,6 @@
 
 using namespace std;
 using namespace __gnu_pbds;
-using namespace __gnu_pbds;
 
 /*
 	Order Statistics Tree ( OST )
