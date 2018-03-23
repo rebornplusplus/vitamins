@@ -1,12 +1,14 @@
 // Big Integer library - C++
 // Collected from Harun Vai :3
+// src maybe: https://sites.google.com/site/indy256/algo_cpp/bigint
 
 #include <bits/stdc++.h>
 
 using namespace std;
 
-const int base = 10;
-const int base_digits = 1;
+// base and base_digits must be consistent
+const int base = 1000000000;
+const int base_digits = 9;
 
 struct Bigint {
     vector<int> z;
