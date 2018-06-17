@@ -1,4 +1,5 @@
 // LightOJ 1064 - Throwing Dice
+
 // rebornplusplus
 // Jun 17 2018 1802
 
