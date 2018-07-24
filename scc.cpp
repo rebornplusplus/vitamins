@@ -43,7 +43,8 @@ int scc(int n) {
 	while(!st.empty()) {
 		int u = st.top(); st.pop();
 		if(ind[u]) continue; 
-		idx++; dfs2(u); 
+		++idx;
+		dfs2(u); 
 	}
 	return idx;
 }
