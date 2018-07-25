@@ -1,11 +1,10 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-const int MAXN = 2000 + 7;
+const int MAXN = 5000 + 7;	// 5007
 bool vis[MAXN];
 int lpair[MAXN], rpair[MAXN];	// left pair of right node and right pair of left node
 vector<int> adj[MAXN];
-int n, m;	// number of nodes, edges
 
 bool bipartite_matching(int u) {
 	for(int i=0; i<(int) adj[u].size(); ++i) {
@@ -22,15 +21,20 @@ bool bipartite_matching(int u) {
 	return false;
 }
 
-int max_matching() {
+// n is the number of nodes on the left side
+int max_matching(int n) {
 	memset(lpair, -1, sizeof lpair);
 	memset(rpair, -1, sizeof rpair);
 	int ret = 0;
-	for(int i=1; i<=n; ++i) ret += bipartite_matching(i);
+	for(int i=1; i<=n; ++i) {
+		memset(vis, false, sizeof vis);
+		ret += bipartite_matching(i);
+	}
 	return ret;
 }
 
 int main() {
+	int n, m;
 	scanf("%d %d", &n, &m);
 	while(m--) {
 		int u, v;
@@ -38,7 +42,7 @@ int main() {
 		adj[u].push_back(v);
 	}
 
-	int mbm = max_matching();
+	int mbm = max_matching(n);
 	printf("Maximum Bipartite Matching = %d\n", mbm);
 
 	return 0;
