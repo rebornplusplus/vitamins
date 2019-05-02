@@ -4,6 +4,9 @@
  * Splitting at some vertical line x means
  *   the left child contains points [-inf, x]
  *   the right child contains points [x, inf]
+ * Query complexity:
+ *   A rectangular range query on the kd-tree takes O(sqrt(n)+k) time,
+ *   where k is the number of reported points.
  * Not your usual K-D Tree I suppose.
  * Use at own risk.
  *
