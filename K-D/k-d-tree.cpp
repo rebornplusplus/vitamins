@@ -33,11 +33,11 @@ inline bool cmpY(const pii &a, const pii &b) {
 int tr[4*N], line[4*N];
 pii leaf[4*N];
 
-inline void prnt(int at, int depth) {
+/* inline void prnt(int at, int depth) {
     return ;
     for(int i=0; i<depth; ++i) cout << "--";
     cout << (depth&1 ? "horizontal" : "vertical") << " split at " << line[at] << " contained " << tr[at] << " points " << (at&1 ? "[rc]" : "[lc]") << "\n";
-}
+} */
 
 struct rectangle {
     int a, b;   /// lower left point
@@ -64,7 +64,7 @@ void build(int at, int l, int r, int depth=0) {
         tr[at] = 1; /// pts[l]
         line[at] = (depth&1) ? pts[l].y : pts[l].x; /// unnecessary
         leaf[at] = pts[l];
-        prnt(at, depth);
+        // prnt(at, depth);
         return ;
     }
 
@@ -78,7 +78,7 @@ void build(int at, int l, int r, int depth=0) {
     build(rc, mid+1, r, depth+1);
     tr[at] = tr[lc] + tr[rc];
 
-    prnt(at, depth);
+    // prnt(at, depth);
 }
 
 /// Finds the number of points in rectangle qq
